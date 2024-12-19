@@ -1,3 +1,34 @@
+# Generate Code Snippets for API Docs
+
+This library was forked from [postman-collection-gen](https://github.com/arashout/postman-collection-gen). This library was a good starting off point for generating code snippets based off of our Postman collection but was missing a few key things:
+
+* Support for generating multiple languages at once. Before, you had to pick just one language to generate code snippets for. Now, you can use one command (see step 4 below) to generate snippets for as many code variants as you want
+* The library was also a little outdated in which code/variant types it supported based on what is provided by Postman. Fortunately this was just a dependency update as well as adding the code variants to `languageVariantPairs`
+* The library was only set up to console.log the outputted code snippets. This version will save all the requests to a file `data.js` which also groups all code snippets to their respective request, such as `Create User`, `Add User to Organization`, etc.
+
+## Steps to create code snippets
+
+1. Go to Postman and the collection you want to export. Go to variables and make sure the **Initial Value** of each variable is set to `{API_KEY}`, for example.
+2. Export the Postman collection and put it in this directory with the name `postman_collection.json`.
+3. Run the `prepare_collection.js` script to generate a file called `prepared_postman_collection.json`
+
+```bash
+node prepare_collection.js
+```
+
+4. Run this script to create `data.js` that includes code snippets of each language
+
+```bash
+node main.js -c prepared_postman_collection.json -l php,curl -l Objective-C,NSURLSession -l java,okhttp -l csharp,httpclient -l r,httr -l ruby,Net::HTTP
+```
+
+5. Then run the `generate_tsx_snippets.js` script to generate tsx files for each request in the `./snippets` directory.
+
+```bash
+node generate_tsx_snippets.js
+```
+
+
 # Postman Gen
 Just a small command line tool that's takes advantage of the [Postman SDK](https://github.com/postmanlabs/postman-collection) and [postman-code-gen](https://github.com/postmanlabs/postman-code-generators#postman-code-generators-) to create code snippets from Postman Collections (Exported from Postman).
 

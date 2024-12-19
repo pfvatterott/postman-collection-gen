@@ -1,2 +1,5 @@
 node_modules
 !justfile
+package-lock.json
+/snippets
+package-lock.json
