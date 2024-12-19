@@ -15,7 +15,13 @@
 					"name": "Create User",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"email\": \"test@propelauth.com\",\n    \"email_confirmed\": false,\n    \"send_email_to_confirm_email_address\": false,\n    \"password\": \"hxjV6A0zcp\",\n    \"ask_user_to_update_password_on_login\": true,\n    \"username\": \"ant\",\n    \"first_name\": \"Anthony\",\n    \"last_name\": \"Edwards\",\n    \"properties\": {\n        \"favoriteSport\": \"basketball\"\n    }\n}",
@@ -650,7 +656,13 @@
 					"name": "Update User",
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"username\": \"username\",\n    \"first_name\": \"firstName\",\n    \"last_name\": \"lastName\",\n    \"picture_url\": \"https://example.com/img.png\",\n    \"properties\": {\n        \"favoriteSport\": \"value\"\n    },\n    \"update_password_required\": false\n}",
@@ -766,7 +778,13 @@
 					"name": "Update User Email",
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"new_email\": \"test@example.com\",\n    \"require_email_confirmation\": false\n}",
@@ -884,7 +902,13 @@
 					"name": "Update User Password",
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"password\": \"moresecurethanthis\",\n    \"ask_user_to_update_password_on_login\": false\n}",
@@ -1002,7 +1026,13 @@
 					"name": "Create Magic Link",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"email\": \"test@example.com\",\n    \"redirect_to_url\": \"http://localhost:3000\",\n    \"expires_in_hours\": 1,\n    \"create_new_user_if_one_doesnt_exist\": false\n}",
@@ -1116,7 +1146,13 @@
 					"name": "Create Access Token",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"user_id\": \"{{USER_ID}}\",\n    \"duration_in_minutes\": 1440\n}",
@@ -1230,7 +1266,13 @@
 					"name": "Migrate user From External Source",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"email\": \"test@example.com\",\n    \"email_confirmed\": true,\n    \"existing_user_id\": \"1234\",\n    \"existing_password_hash\": \"bcrypt_hash\",\n    \"existing_mfa_base32_encoded_secret\": \"base32_encoded_secret\",\n    \"update_password_required\": false,\n    \"enabled\": true,\n    \"username\": \"airbud3\",\n    \"first_name\": \"Buddy\",\n    \"last_name\": \"Framm\",\n    \"picture_url\": \"https://example.com/img.png\",\n    \"properties\": {\n        \"favoriteSport\": \"basketball\"\n    }\n}",
@@ -1478,7 +1520,13 @@
 					"name": "Block User",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "",
@@ -1587,7 +1635,13 @@
 					"name": "Unblock User",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "",
@@ -1696,7 +1750,13 @@
 					"name": "Disable User 2FA",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "",
@@ -1805,7 +1865,13 @@
 					"name": "Resend Email Confirmation",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"user_id\": \"{{USER_ID}}\"\n}",
@@ -1914,7 +1980,13 @@
 					"name": "Force Logout All User Sessions",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{AUTH_URL}}/api/backend/v1/user/{{USER_ID}}/logout_all_sessions",
 							"host": [
@@ -2444,7 +2516,13 @@
 					"name": "Create Org",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"name\": \"Acme Inc\",\n    \"domain\": \"acme.com\",\n    \"enable_auto_joining_by_domain\": true,\n    \"members_must_have_matching_domain\": true,\n    \"custom_role_mapping_name\": \"{{ROLE_CONFIGURATION_NAME}}\",\n    \"legacy_org_id\": \"1234\",\n    \"max_users\": 100\n}",
@@ -2563,7 +2641,13 @@
 					"name": "Add User to Org",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"user_id\": \"{{USER_ID}}\",\n    \"org_id\": \"{{ORG_ID}}\",\n    \"role\": \"Member\"\n}",
@@ -2682,7 +2766,13 @@
 					"name": "Invite User to Org",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"email\": \"test@propelauth.com\",\n    \"org_id\": \"{{ORG_ID}}\",\n    \"role\": \"Member\"\n}",
@@ -2799,7 +2889,13 @@
 					"name": "Change Role",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"user_id\": \"{{USER_ID}}\",\n    \"org_id\": \"{{ORG_ID}}\",\n    \"role\": \"Member\"\n}",
@@ -2918,7 +3014,13 @@
 					"name": "Remove User From Org",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"user_id\": \"{{USER_ID}}\",\n    \"org_id\": \"{{ORG_ID}}\"\n}",
@@ -3037,7 +3139,13 @@
 					"name": "Update Org",
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"name\": \"Acme Inc\",\n    \"domain\": \"acme.com\",\n    \"enable_auto_joining_by_domain\": true,\n    \"members_must_have_matching_domain\": true,\n    \"max_users\": 100,\n    \"can_setup_saml\": true,\n    \"legacy_org_id\": \"1234\",\n    \"metadata\": {\n        \"customKey\": \"customValue\"\n    }\n}",
@@ -3249,7 +3357,13 @@
 					"name": "Enable SAML for Org",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{AUTH_URL}}/api/backend/v1/org/{{ORG_ID}}/allow_saml",
 							"host": [
@@ -3352,7 +3466,13 @@
 					"name": "Disable SAML for Org",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{AUTH_URL}}/api/backend/v1/org/{{ORG_ID}}/disallow_saml",
 							"host": [
@@ -3562,7 +3682,13 @@
 					"name": "Subscribe Org To Role Configuration",
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "Content-Type",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"custom_role_mapping_name\": \"{{ROLE_CONFIGURATION_NAME}}\"\n}",
@@ -3911,7 +4037,13 @@
 					"name": "Create SAML Connection Link",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"expires_in_seconds\": 86400\n}",
@@ -4129,7 +4261,13 @@
 					"name": "Set SAML IdP Metadata",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"idp_entity_id\": \"http://www.okta.com/example\",\n    \"idp_sso_url\": \"https://dev.okta.com/app/example/example/sso/saml\",\n    \"idp_certificate\": \"-----BEGIN CERTIFICATE-----MIIDqDCCApCgAw-----END CERTIFICATE-----\",\n    \"provider\": \"Okta\",\n    \"org_id\": \"{{ORG_ID}}\"\n}",
@@ -4242,7 +4380,13 @@
 					"name": "Enable SAML Connection",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{}",
@@ -4470,7 +4614,13 @@
 					"name": "Validate API Key",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"api_key_token\": \"{{END_USER_API_KEY}}\"\n}",
@@ -4589,10 +4739,16 @@
 					"name": "Create API Key",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"org_id\": \"{{ORG_ID}}\",\n    \"user_id\": \"{{USER_ID}}\",\n    \"expires_at_seconds\": 1630425600,\n    \"metadata\": {\n        \"customKey\": \"customValue\"\n    }\n}",
+							"raw": "{\n    \"user_id\": \"{{USER_ID}}\",\n    \"expires_at_seconds\": 1712880246,\n    \"metadata\": {\n        \"customKey\": \"customValue\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -4706,7 +4862,13 @@
 					"name": "Update API Key",
 					"request": {
 						"method": "PATCH",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"expires_at_seconds\": 1712848015,\n    \"metadata\": {\n        \"customKey\": \"customValue\"\n    }\n}",

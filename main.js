@@ -134,13 +134,13 @@ function generateSnippets(item, languageVariantPairs, environmentVariables) {
                 // Replace escaped newlines with actual newlines
                 var processedSnippet = collection.variables.replace(snippet, environmentVariables)
                     .replace(/\\n/g, '\n')
-                    .replace(/\\"/g, '"');
                 
                 var completeSnippet = {
                     code: processedSnippet,
                     'lang': lvp.language,
                     'title': getTitle(lvp.language)
                 }
+                console.log(completeSnippet)
                 
                 var re = /(?:\{\{(.+?)\}\})/g;
                 var matches = re.exec(completeSnippet.snippet);
@@ -188,17 +188,13 @@ function customStringify(obj) {
     return JSON.stringify(obj, null, 2).replace(/"code": "(.*?)"/gs, function (match, p1) {
         // Decode escaped characters, preserve line breaks, and wrap the entire value in backticks
         const unescaped = p1
-            .replace(/\\"/g, '"') // Unescape double quotes
-            .replace(/\\n/g, '\n') // Replace escaped newlines with actual newlines
-            .replace(/\\\\/g, '\\'); // Unescape backslashes
-        console.log(`"code": \`${unescaped}\``)
-        return `"code": \`${unescaped}\``; // Wrap in backticks
+        return `"code": "${unescaped}"`; // Wrap in backticks
     });
 }
 
 function saveAsPlainJsFile(variableName, data, filePath) {
     // Construct the JavaScript variable definition as a string
-    const fileContent = `const ${variableName} = ${formatJsObject(data)};\n\nexport default ${variableName};`;
+    const fileContent = `const ${variableName} = ${customStringify(data)};\n\nexport default ${variableName};`;
 
     // Write the content to the specified file
     fs.writeFile(filePath, fileContent, 'utf8', function (err) {
