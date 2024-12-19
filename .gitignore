@@ -3,3 +3,5 @@ node_modules
 package-lock.json
 /snippets
 package-lock.json
+data.js
+prepared_postman_collection.json
