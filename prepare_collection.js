@@ -12,8 +12,8 @@ function updateHeaders(obj) {
 
   if (typeof obj === 'object' && obj !== null) {
     // Check if the current object has the "header" property and its value is an empty array
-    if (obj.hasOwnProperty('header') && Array.isArray(obj.header) && obj.header.length === 0) {
-      obj.header = [{"key": "Authorization", "value": "Bearer {API_KEY}"}];
+    if (obj.hasOwnProperty('header') && Array.isArray(obj.header)) {
+      obj.header.push({"key": "Authorization", "value": "Bearer {API_KEY}"})
     }
 
     // Recurse through all properties of the object
